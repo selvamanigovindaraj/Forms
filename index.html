@@ -6,15 +6,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="formstyle.css">
+	<style>
+	form .error{
+	color: red;
+	}
+	</style>
 	
 </head>
 <body>
 <header>
 	
 </header>
-<section class="container w-50 jumbotron">
+<section class="container  jumbotron">
 	<h2>Create Account</h2>
-	<form>
+	<form name="createAccount" id="createAccount">
 		<div  class="form-group">
 			<div class="row">
 				<div class="col">
@@ -22,20 +27,20 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col">
+				<div class="col-12 col-md-6">
 					<div class="row">
 						<div class="col-12">
-							<input type="text" class="form-control" placeholder="First name" id="firstName" required>
+							<input type="text" class="form-control  mb-sm-2" placeholder="First name" id="firstName" name="firstName" required>
 						</div>
 						<div class="col-12">
 							<span id="firstNameErr" class="text-danger"></span>
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-6">
 					<div class="row">
 						<div class="col-12">
-							<input type="text" class="form-control" placeholder="Last name" id="lastName" required>
+							<input type="text" class="form-control" placeholder="Last name" id="lastName" name="lastName" required>
 						</div>
 						<div class="col-12">
 							<span id="lastNameErr" class="text-danger"></span>
@@ -54,7 +59,7 @@
 				<div class="col">
 					<div class="row">
 						<div class="col-12">
-							<input type="text" class="form-control" placeholder="example@gmail.com" id="mail" required>
+							<input type="email" class="form-control" placeholder="example@gmail.com" id="mail" name="mail" required>
 						</div>
 						<div class="col-12">
 							<span id="mailErr" class="text-danger"></span>
@@ -73,7 +78,7 @@
 				<div class="col">
 					<div class="row">
 						</div class="col-12">
-							<input type="password" class="form-control" placeholder="Password" id="createPassword" required>
+							<input type="password" class="form-control" placeholder="Password" id="createPassword" name="createPassword" required>
 						</div>
 						<div class="col-12">
 							<span id="passwordErr" class="text-danger"></span>
@@ -91,7 +96,7 @@
 				<div class="col">
 					<div class="row">
 						<div class="col-12">
-							<input type="password" class="form-control" id="confirmPassword" placeholder="Password" required>
+							<input type="password" class="form-control" id="confirmPassword" placeholder="Password" name="confirmPassword" required>
 						</div>
 						<div class="col-12">
 							<span id="confirmPasswordErr" class="text-danger"></span>
@@ -107,10 +112,10 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col">
+				<div class="col-12 col-md-4">
 					<div class="row">
 						<div class="col-12">
-							<select class="custom-select  mr-sm-2 mb-sm-0 w-100" id="month">
+							<select class="custom-select  mr-sm-2 mb-sm-2 w-100" id="month" name="month" required>
 								<option value="" selected>Choose...</option>
 								<option value="January ">January </option>
 								<option value="February">February</option>
@@ -131,20 +136,20 @@
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4">
 					<div class="row">
 						<div class="col-12">
-							<input type="text" class="form-control" placeholder="Day" id="day">
+							<input type="text" class="form-control  mb-sm-2" placeholder="Day" id="day" name="day" required>
 						</div>
 						<div class="col-12">
 							<span id="dayErr" class="text-danger"></span>
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-12 col-md-4">
 					<div class="row">
 						<div class="col-12">
-							<input type="text" class="form-control" placeholder="Year" id="year">
+							<input type="text" class="form-control  mb-sm-2" placeholder="Year" id="year" name="year" required>
 						</div>
 						<div class="col-12">
 							<span id="yearErr" class="text-danger"></span>
@@ -163,7 +168,7 @@
 				<div class="col">
 					<div class="row">
 						<div class="col-12">
-							<select class="custom-select mb-2 mr-sm-2 mb-sm-0 w-100" id="gender">
+							<select class="custom-select mb-2 mr-sm-2 mb-sm-0 w-100" id="gender" name="gender" required>
 								<option value="" selected>I am...</option>
 								<option value="male">Male</option>
 								<option value="female">Female</option>
@@ -224,7 +229,7 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<button type="button" onclick="validFunction()" class="btn btn-primary btn-lg text-right float-right">Next</button>
+				<input type="submit"  class="btn btn-primary btn-lg text-right float-right" value="submit">
 			</div>
 		</div>
 	</form>
@@ -233,6 +238,8 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-	<script src="formsample.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+	<script src="validatejquery.js"></script>
 </body>
 </html>
